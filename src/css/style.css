@@ -98,3 +98,27 @@ html {
 .animate-bg-fade-2 {
     animation: bgFade2 4s ease-in-out infinite;
 }
+
+/* Optimized Gradient Animation (Composited) */
+@keyframes gradient-scroll-composited {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-gradient-composited {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.animate-gradient-composited::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 200%; 
+    height: 100%;
+    /* Gradient: Green-600 -> Green-500 -> Emerald-500 -> Green-600 (Loop) */
+    background: linear-gradient(to right, #16a34a, #22c55e, #10b981, #16a34a);
+    animation: gradient-scroll-composited 3s linear infinite;
+    z-index: -1;
+}

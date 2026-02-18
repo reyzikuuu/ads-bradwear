@@ -29,19 +29,8 @@ export default {
                 // Ubah durasi animasi di sini (misal: 40s menjadi 20s untuk lebih cepat)
                 'scroll-left': 'scroll-left 40s linear infinite',
                 'scroll-right': 'scroll-right 40s linear infinite',
-                'gradient-xy': 'gradient-xy 6s ease infinite',
             },
             keyframes: {
-                'gradient-xy': {
-                    '0%, 100%': {
-                        'background-size': '200% 200%',
-                        'background-position': 'left center'
-                    },
-                    '50%': {
-                        'background-size': '200% 200%',
-                        'background-position': 'right center'
-                    },
-                },
                 'scroll-left': {
                     '0%': { transform: 'translateX(0)' },
                     '100%': { transform: 'translateX(-50%)' },
